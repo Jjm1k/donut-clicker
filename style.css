@@ -59,6 +59,8 @@ button:hover {
     height: 1000px;
     background-color: #f1aed8;
     margin: auto;
+    background: url('donut.jpg');
+    background-position: center;
 }
 
 #donutCount {
@@ -73,6 +75,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 20px;
 }
 
 #autoClickButton {
@@ -83,6 +86,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     opacity: 1;
+    margin: 20px;
 }
 
 #autoClickButton:disabled {
@@ -93,6 +97,6 @@ button:hover {
     border: none;
     border-radius: 5px;
     opacity: .3;
+    margin: 20px;
 }
-
 

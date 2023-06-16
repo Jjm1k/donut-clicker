@@ -1,23 +1,50 @@
-// Import the DonutMaker class
+// DonutMaker class imported
 import DonutMaker from "./DonutMaker.js";
 
-// Create a new instance of the DonutMaker class
 const donutMaker = new DonutMaker();
 
-// Get the elements from the HTML document
 const donutCountElement = document.getElementById("donutCount");
 const clickButton = document.getElementById("clickButton");
+const autoClickButton = document.getElementById("autoClickButton");
 
-// Function to update the donut count on the screen
+// Update Status Functions Start
 function updateDonutCount() {
     donutCountElement.textContent = `Donuts: ${donutMaker.donuts}`;
 }
 
-// Add event listener to the click button
+// Function to update the auto-clicker button status
+function updateAutoClickButton() {
+    autoClickButton.textContent = `Purchase Auto-Clicker (Cost: ${donutMaker.autoClickerCost})`;
+    if (donutMaker.autoClickerCost < donutMaker.donuts) {
+    autoClickButton.removeAttribute("disabled")
+    } else {
+        autoClickButton.disabled = true;
+    }
+}
+
+function activateAutoClicker() {
+    setInterval(() => {
+        donutMaker.increaseDonuts();
+        updateDonutCount();
+    }, 1000); // Auto-click every 1 second
+}
+// Update Status Functions End
+
+
+// Event Listeners For Buttons Start
 clickButton.addEventListener("click", () => {
     donutMaker.increaseDonuts();
     updateDonutCount();
+    updateAutoClickButton();
 });
 
-// Initial update of the donut count
+autoClickButton.addEventListener("click", () => {
+    donutMaker.purchaseAutoClicker();
+    updateDonutCount();
+    updateAutoClickButton();
+    activateAutoClicker();
+});
+// Event Listeners For Buttons End
+
 updateDonutCount();
+updateAutoClickButton();
