@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: #0077ff;
+}
+
+
 body {
     background-color: #ed77b1;
+    text-align: center;
 }
 
 header {
@@ -53,6 +59,40 @@ button:hover {
     height: 1000px;
     background-color: #f1aed8;
     margin: auto;
+}
+
+#donutCount {
+    font-size: 24px;
+}
+
+#clickButton {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#autoClickButton {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #0044ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#autoClickButton:disabled {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #0044ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    opacity: .3;
 }
 
 

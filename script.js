@@ -1,43 +1,23 @@
-// Navigation Dropdown Functionality Start
-const aboutDonuts = document.querySelector(".about-donuts")
-const inspirationDonuts = document.querySelector(".inspiration-donuts")
-const developerDonuts = document.querySelector(".developer-donuts")
+// Import the DonutMaker class
+import DonutMaker from "./DonutMaker.js";
 
-const showAbout = () => {
-    if (aboutDonuts.style.display === "block") {
-    aboutDonuts.style.display = "none"
-    inspirationDonuts.style.display = "none"
-    developerDonuts.style.display = "none"
-    } else {
-        aboutDonuts.style.display = "block"
-        inspirationDonuts.style.display = "none"
-        developerDonuts.style.display = "none"
-    }
+// Create a new instance of the DonutMaker class
+const donutMaker = new DonutMaker();
+
+// Get the elements from the HTML document
+const donutCountElement = document.getElementById("donutCount");
+const clickButton = document.getElementById("clickButton");
+
+// Function to update the donut count on the screen
+function updateDonutCount() {
+    donutCountElement.textContent = `Donuts: ${donutMaker.donuts}`;
 }
 
-const showInspiration = () => {
-    if (inspirationDonuts.style.display === "block") {
-    inspirationDonuts.style.display = "none"
-    aboutDonuts.style.display = "none"
-    developerDonuts.style.display = "none"
-    } else {
-        inspirationDonuts.style.display = "block"
-        aboutDonuts.style.display = "none"
-        developerDonuts.style.display = "none"
-    }
-}
+// Add event listener to the click button
+clickButton.addEventListener("click", () => {
+    donutMaker.increaseDonuts();
+    updateDonutCount();
+});
 
-const showDeveloper = () => {
-    if (developerDonuts.style.display === "block") {
-    developerDonuts.style.display = "none"
-    aboutDonuts.style.display = "none"
-    inspirationDonuts.style.display = "none"
-    } else {
-        developerDonuts.style.display = "block"
-        aboutDonuts.style.display = "none"
-        inspirationDonuts.style.display = "none"
-    }
-}
-
-// Navigation Dropdown Functionality End
-
+// Initial update of the donut count
+updateDonutCount();
