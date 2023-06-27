@@ -15,7 +15,7 @@ function updateDonutCount() {
 // Function to update the auto-clicker button status
 function updateAutoClickButton() {
     autoClickButton.textContent = `Purchase Auto-Clicker (Cost: ${donutMaker.autoClickerCost})`;
-    if (donutMaker.autoClickerCost < donutMaker.donuts) {
+    if (donutMaker.autoClickerCost <= donutMaker.donuts) {
     autoClickButton.removeAttribute("disabled")
     } else {
         autoClickButton.disabled = true;
